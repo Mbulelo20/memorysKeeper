@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const {getPhotos, uploadPhoto, updatePhoto, deletePhoto} = require('../controllers/photoController');
+const {protect} = require('../middleware/authMiddleware.js');
 
-router.get('/', getPhotos);
+router.get('/', protect, getPhotos);
 
-router.post('/', uploadPhoto);
+router.post('/', protect, uploadPhoto);
 
-router.put('/:id', updatePhoto);
+router.put('/:id', protect, updatePhoto);
 
-router.delete('/:id', deletePhoto);
+router.delete('/:id', protect, deletePhoto);
 
 module.exports = router;
