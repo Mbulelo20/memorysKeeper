@@ -6,7 +6,7 @@ const photoSchema = mongoose.Schema({
         required: true,
         ref: 'User'
     },
-    tags: [String],
+    // tags: [String],
     file: String
 }, {
     timestamps: true

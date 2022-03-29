@@ -20,7 +20,7 @@ const Header = () => {
     <Fragment>
         <header className="header">
             <div className="logo">
-                <Link to="/">Home</Link>
+            {user ? (<h4><FaUser className="userIcon"/> {user.name}</h4>) : (<h5>You are not logged in</h5>)}
             </div>
             <ul>
                 {user ? (
@@ -38,7 +38,7 @@ const Header = () => {
                 </li>
                 <li>
                     <Link to="/register">
-                        <FaUser /> Register
+                        <FaUser className="userIcon"/> Register
                     </Link>
                 </li>
                     </Fragment>

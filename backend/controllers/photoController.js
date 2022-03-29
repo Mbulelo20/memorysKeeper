@@ -21,7 +21,7 @@ const uploadPhoto = ayncHandler(async (req, res) => {
 
     const photoObject = await PhotoObject.create({
         file: req.body.file,
-        tags: req.body.tags,
+        // tags: req.body.tags,
         user: req.user.id
     })
     res.status(200).json(photoObject)
@@ -35,14 +35,13 @@ const updatePhoto = ayncHandler(async (req, res) => {
         throw new Error("File not found!");
     }
 
-    const user = await User.findById(req.user.id)
 
-    if(!user) {
+    if(!req.user) {
         res.status(401);
         throw new Error("User not found")
     }
 
-    if(photoObject.user.toString() !== user.id) {
+    if(photoObject.user.toString() !== req.user.id) {
         res.status(401);
         throw new Error("User not authorized")
     }
@@ -60,14 +59,12 @@ const deletePhoto = ayncHandler(async (req, res) => {
         throw new Error("File not found!");
     }
 
-    const user = await User.findById(req.user.id)
-
-    if(!user) {
+    if(!req.user) {
         res.status(401);
         throw new Error("User not found")
     }
 
-    if(photoObject.user.toString() !== user.id) {
+    if(photoObject.user.toString() !== req.user.id) {
         res.status(401);
         throw new Error("User not authorized")
     }

@@ -88,8 +88,8 @@ h3 {
 
 .goals {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
 }
 
 .goal {
@@ -139,7 +139,7 @@ h3 {
   padding: 10px 20px;
   border: 1px solid #000;
   border-radius: 5px;
-  background: #000;
+  background: blue;
   color: #fff;
   font-size: 16px;
   font-weight: 700;
@@ -150,7 +150,9 @@ h3 {
   align-items: center;
   justify-content: center;
 }
-
+.userIcon {
+  color: rgb(105, 211, 223);
+}
 .btn svg {
   margin-right: 8px;
 }
