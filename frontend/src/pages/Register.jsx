@@ -58,7 +58,7 @@ const Register = () => {
       }
 
       if(isLoading){
-          return <h1>LOADING... LOADING...</h1>
+          return <h1>LOADING... </h1>
       }
   return (
     <Fragment>

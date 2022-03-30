@@ -47,7 +47,7 @@ const Login = () => {
     }
 
     if(isLoading){
-        return <h1>LOADING... LOADING...</h1>
+        return <h1>LOADING...</h1>
     }
   return (
     <Fragment>
@@ -55,7 +55,7 @@ const Login = () => {
         <h1>
           <FaSignInAlt /> Login
         </h1>
-        <p>Login and start setting goals</p>
+        <p>Login and start saving your photos</p>
       </section>
 
       <section className='form'>
